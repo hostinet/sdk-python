@@ -9,8 +9,8 @@ class client():
     version = 1.1
 
     def __init__(self, **kargs):
-        self.key = kargs.get('key', '')
-        self.secret = kargs.get('secret', '')
+        self.key = kargs.get('key', None)
+        self.secret = kargs.get('secret', None)
         self.token = None
         pass
 
@@ -52,6 +52,8 @@ class client():
       return json
 
     def auth(self):
+      if not self.key or not self.secret:
+        return False
       json = self.connect('POST', 'auth', {
         'appkey':self.key,
         'appsecret':self.secret

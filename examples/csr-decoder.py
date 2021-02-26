@@ -1,14 +1,13 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
 from hostinet.api import api
 
 api = api(
-  key = 'KEY',
-  secret = 'TOKEN'
+  key = 'HOSTINET_API_KEY',
+  secret = 'HOSTINET_API_SECRET'
 )
 
-response = api->post("tool/csrdecode", {
+response = api.post("tool/csrdecode", {
   'csr': '-----BEGIN CERTIFICATE REQUEST-----\
 MIIC1jCCAb4CADCBkTELMAkGA1UEBhMCVVMxGzAZBgNVBAMTEmV4YW1wbGUuZG9t\
 YWluLmNvbTESMBAGA1UEBxMJQ3VwZXJ0aW5vMR8wHQYDVQQKExZZb3VyIFNvbHV0\
