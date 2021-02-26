@@ -6,8 +6,6 @@ api = api(
   key = 'HOSTINET_API_KEY',
   secret = 'HOSTINET_API_SECRET'
 )
-list = api.post('tool/idnconverter', {
-  'domain' : 'ño.com'
-})
+test = api.upload('/absolute/path/to/file.txt')
 
-print(list)
+print(test)

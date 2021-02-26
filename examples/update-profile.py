@@ -7,6 +7,8 @@ api = api(
   secret = 'HOSTINET_API_SECRET'
 )
 
-test = api.upload('/absolute/path/to/file.txt')
-
-print(test)
+response = api.post("profile", {
+    'email': 'new@email.com',
+    'email2': 'secondnew@email.com'
+});
+print_r(response);
